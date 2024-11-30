@@ -26,8 +26,8 @@ This project is a YouTube channel scraper that extracts various statistics and i
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Hetav21/MLE-Project.git
-   cd MLE-Project/scraper
+   git clone https://github.com/Hetav21/youtube-scraper.git
+   cd youtube-scraper
    ```
 
 2. Install dependencies:
