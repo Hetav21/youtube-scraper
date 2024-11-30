@@ -1,0 +1,7 @@
+node_modules/*
+dist/*
+html.html
+axios-parameters.txt
+parameters-to-be-extracted.txt
+scrapper-api-test/*
+src/env/.env
