@@ -16,26 +16,36 @@ import { daily_averages } from "./elements/daily_averages";
 import { weekly_averages } from "./elements/weekly_averages";
 import { monthly_averages } from "./elements/monthly_averages";
 
-export function scrapeData(data: string): void {
+export function scrapeData(data: string): string {
   const $ = cheerio.load(data); // Load the HTML data into a cheerio object
 
-  console.log("rank: " + rank($));
-  console.log("Youtuber: " + Youtuber($));
-  console.log("subscribers: " + subscribers($));
-  console.log("video_views: " + video_views($));
-  console.log("category: " + category($));
-  console.log("Title: " + Title($));
-  console.log("uploads: " + uploads($));
-  console.log("Abbreviation: " + Abbreviation($));
-  console.log("Country: " + Country($));
-  console.log("channel_type: " + channel_type($));
-  console.log("user created: " + user_created($));
-  console.log("subscribers in the last 30 days: " + subscribers_last_30days($));
-  console.log("video views in the last 30 days: " + video_views_last_30days($));
-  console.log("Daily Averages Subs: " + daily_averages($)[0]);
-  console.log("Daily Averages Views: " + daily_averages($)[1]);
-  console.log("Weekly Average Subs: " + weekly_averages($)[0]);
-  console.log("Weekly Average Views: " + weekly_averages($)[1]);
-  console.log("Monthly Average Subs: " + monthly_averages($)[0]);
-  console.log("Weekly Average Views: " + monthly_averages($)[1]);
+  const scrapedData = {
+    rank: rank($),
+    youtuber: Youtuber($),
+    subscribers: subscribers($),
+    videos_views: video_views($),
+    category: category($),
+    title: Title($),
+    uploads: uploads($),
+    Abbreviation: Abbreviation($),
+    Country: Country($),
+    channel_type: channel_type($),
+    user_created: user_created($),
+    subscribers_last_30days: subscribers_last_30days($),
+    video_views_last_30days: video_views_last_30days($),
+    daily_averages: {
+      subscribers: daily_averages($)[0],
+      views: daily_averages($)[1],
+    },
+    weekly_averages: {
+      subscribers: weekly_averages($)[0],
+      views: weekly_averages($)[1],
+    },
+    monthly_averages: {
+      subscribers: monthly_averages($)[0],
+      views: monthly_averages($)[1],
+    },
+  };
+
+  return JSON.stringify(scrapedData);
 }

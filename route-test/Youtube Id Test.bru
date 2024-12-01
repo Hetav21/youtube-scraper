@@ -1,0 +1,17 @@
+meta {
+  name: Youtube Id Test
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3003
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+   "youtubeId": "@mrbeast" 
+  }
+}
