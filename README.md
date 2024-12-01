@@ -1,7 +1,6 @@
+# YouTube Channel Data Scraper
 
-# YouTube Channel Scraper
-
-This project implements a YouTube channel scraper designed to extract various statistics and information from a YouTube channel page, utilizing Axios, Cheerio and Express .
+A YouTube channel scraper that extracts key statistics such as rank, subscribers, views, and more using Axios, Cheerio, and Express. It also tracks performance trends with daily, weekly, and monthly averages.
 
 ## Scraping Functions
 
