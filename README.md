@@ -76,10 +76,10 @@ with the following body parameters:
 
 ```url
   {
-    "youtubeId": "@channel_name"
+    "youtubeId": "@channel_id"
   }
 ```
-where `channel_name` is the name of the YouTube channel you want to scrape.
+where `channel_id` is the id of the YouTube channel you want to scrape.
 
 NOTE: Alternatively, the default PORT can be changed using the `.env` file
 
